@@ -1,0 +1,29 @@
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |msg| %>
+    <div class="alert alert-danger"><%= msg %></div>
+
+  <% end %>
+
+<% end %>
+<h2> Регистрация нового пользователя </h2>
+<%= form_for :user, url: users_path do |f|%>
+  <p>
+  Имя <br>
+  <%= f.text_field :name, :placeholder => "Name" %>
+  </p>
+
+  <p>
+  Номер телефона <br>
+  <%= f.telephone_field :phone, :placeholder => "Phone - (923)-456-7890" %>
+  </p>
+
+  <p>
+  Пароль <br>
+  <%= f.password_field :password, :placeholder => "Password" %>
+  </p>
+
+  <p>
+  <%= f.submit({:class => 'btn btn-success'})  %>
+  </p>
+
+  <% end %>

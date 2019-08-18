@@ -1,0 +1,22 @@
+<h2> Добавление нового пользователя </h2>
+<%= form_for :test, url: tests_path do |f|%>
+  <p>
+  Имя <br>
+  <%= f.text_field :myname %>
+  </p>
+
+  <p>
+  Номер телефона <br>
+  <%= f.text_field :phone_number %>
+  </p>
+
+  <p>
+  Пароль <br>
+  <%= f.text_field :pass %>
+  </p>
+
+  <p>
+  <%= f.submit  %>
+  </p>
+
+  <% end %>
